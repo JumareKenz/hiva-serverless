@@ -1,0 +1,22 @@
+{
+  "name": "HIVA Qwen2.5-14B Serverless",
+  "description": "Private vLLM serverless endpoint with Qwen2.5-14B-Instruct-GPTQ Int4",
+  "icon": "https://runpod.io/favicon.ico",
+  "categories": ["llm", "vllm"],
+  "dockerfile": "/Dockerfile",
+  "handler": "handler.py",
+  "env": [
+    {
+      "name": "HF_TOKEN",
+      "description": "Hugging Face token (required for gated models)",
+      "required": true,
+      "secret": true
+    }
+  ],
+  "ports": {
+    "8000/tcp": {
+      "protocol": "http",
+      "description": "vLLM OpenAI-compatible API"
+    }
+  }
+}
