@@ -1,0 +1,11 @@
+[
+  {
+    "name": "health-check",
+    "input": {
+      "model": "test",
+      "messages": [{"role": "user", "content": "ping"}],
+      "max_tokens": 10
+    },
+    "expected_output_contains": "pong"
+  }
+]
