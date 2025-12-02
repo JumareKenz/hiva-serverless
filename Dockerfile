@@ -17,8 +17,8 @@ RUN sed -i 's|http://archive.ubuntu.com|http://us.archive.ubuntu.com|g' /etc/apt
 RUN ln -s /usr/bin/python3.11 /usr/bin/python && \
     curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11
 
-# Install vLLM 0.8.3 and PyTorch
-RUN pip install --no-cache-dir vllm==0.8.3 torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+# Install vLLM 0.7.3 (stable for CUDA 12.4) and PyTorch
+RUN pip install --no-cache-dir vllm==0.7.3 torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 
 # Set HF token (passed from RunPod UI)
 ARG HF_TOKEN
